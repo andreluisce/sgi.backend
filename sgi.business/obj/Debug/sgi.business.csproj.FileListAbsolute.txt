@@ -1,0 +1,17 @@
+E:\Workspaces\sgi.backend\sgi.business\bin\Debug\sgi.business.dll.config
+E:\Workspaces\sgi.backend\sgi.business\bin\Debug\sgi.business.dll
+E:\Workspaces\sgi.backend\sgi.business\bin\Debug\sgi.business.pdb
+E:\Workspaces\sgi.backend\sgi.business\bin\Debug\sgi.common.dll
+E:\Workspaces\sgi.backend\sgi.business\bin\Debug\sgi.domain.dll
+E:\Workspaces\sgi.backend\sgi.business\bin\Debug\sgi.infra.dll
+E:\Workspaces\sgi.backend\sgi.business\bin\Debug\EntityFramework.dll
+E:\Workspaces\sgi.backend\sgi.business\bin\Debug\MySql.Data.Entity.EF6.dll
+E:\Workspaces\sgi.backend\sgi.business\bin\Debug\MySql.Data.dll
+E:\Workspaces\sgi.backend\sgi.business\bin\Debug\sgi.common.pdb
+E:\Workspaces\sgi.backend\sgi.business\bin\Debug\sgi.domain.pdb
+E:\Workspaces\sgi.backend\sgi.business\bin\Debug\sgi.infra.pdb
+E:\Workspaces\sgi.backend\sgi.business\bin\Debug\EntityFramework.xml
+E:\Workspaces\sgi.backend\sgi.business\bin\Debug\pt-BR\sgi.common.resources.dll
+E:\Workspaces\sgi.backend\sgi.business\obj\Debug\sgi.business.csprojResolveAssemblyReference.cache
+E:\Workspaces\sgi.backend\sgi.business\obj\Debug\sgi.business.dll
+E:\Workspaces\sgi.backend\sgi.business\obj\Debug\sgi.business.pdb

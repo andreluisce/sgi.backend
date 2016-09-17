@@ -1,0 +1,17 @@
+E:\Workspaces\sgi.backend\sgi.domain\bin\Debug\sgi.domain.dll.config
+E:\Workspaces\sgi.backend\sgi.domain\bin\Debug\sgi.domain.dll
+E:\Workspaces\sgi.backend\sgi.domain\bin\Debug\sgi.domain.pdb
+E:\Workspaces\sgi.backend\sgi.domain\bin\Debug\EntityFramework.dll
+E:\Workspaces\sgi.backend\sgi.domain\bin\Debug\EntityFramework.SqlServer.dll
+E:\Workspaces\sgi.backend\sgi.domain\bin\Debug\MySql.Data.dll
+E:\Workspaces\sgi.backend\sgi.domain\bin\Debug\mysql.data.entity.EF6.dll
+E:\Workspaces\sgi.backend\sgi.domain\bin\Debug\Newtonsoft.Json.dll
+E:\Workspaces\sgi.backend\sgi.domain\bin\Debug\sgi.common.dll
+E:\Workspaces\sgi.backend\sgi.domain\bin\Debug\sgi.common.pdb
+E:\Workspaces\sgi.backend\sgi.domain\bin\Debug\EntityFramework.xml
+E:\Workspaces\sgi.backend\sgi.domain\bin\Debug\EntityFramework.SqlServer.xml
+E:\Workspaces\sgi.backend\sgi.domain\bin\Debug\Newtonsoft.Json.xml
+E:\Workspaces\sgi.backend\sgi.domain\bin\Debug\pt-BR\sgi.common.resources.dll
+E:\Workspaces\sgi.backend\sgi.domain\obj\Debug\sgi.domain.csprojResolveAssemblyReference.cache
+E:\Workspaces\sgi.backend\sgi.domain\obj\Debug\sgi.domain.dll
+E:\Workspaces\sgi.backend\sgi.domain\obj\Debug\sgi.domain.pdb

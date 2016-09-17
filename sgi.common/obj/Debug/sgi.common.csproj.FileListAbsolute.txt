@@ -1,0 +1,12 @@
+E:\Workspaces\sgi.backend\sgi.common\bin\Debug\sgi.common.dll
+E:\Workspaces\sgi.backend\sgi.common\bin\Debug\sgi.common.pdb
+E:\Workspaces\sgi.backend\sgi.common\bin\Debug\pt-BR\sgi.common.resources.dll
+E:\Workspaces\sgi.backend\sgi.common\obj\Debug\sgi.common.csprojResolveAssemblyReference.cache
+E:\Workspaces\sgi.backend\sgi.common\obj\Debug\sgi.common.Resources.Errors.resources
+E:\Workspaces\sgi.backend\sgi.common\obj\Debug\sgi.common.Resources.Messages.resources
+E:\Workspaces\sgi.backend\sgi.common\obj\Debug\sgi.common.Resources.Errors.pt-BR.resources
+E:\Workspaces\sgi.backend\sgi.common\obj\Debug\sgi.common.Resources.Messages.pt-BR.resources
+E:\Workspaces\sgi.backend\sgi.common\obj\Debug\sgi.common.csproj.GenerateResource.Cache
+E:\Workspaces\sgi.backend\sgi.common\obj\Debug\pt-BR\sgi.common.resources.dll
+E:\Workspaces\sgi.backend\sgi.common\obj\Debug\sgi.common.dll
+E:\Workspaces\sgi.backend\sgi.common\obj\Debug\sgi.common.pdb

@@ -1,0 +1,147 @@
+
+
+using sgi.domain.Models;
+using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.Migrations;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Web;
+using System.Web.Hosting;
+
+namespace sgi.infra.Migrations
+{
+    internal sealed class Configuration : DbMigrationsConfiguration<sgi.infra.Data.AppDataContext>
+    {
+        public Configuration()
+        {
+            AutomaticMigrationsEnabled = true;
+            //SetSqlGenerator("MySql.Data.MySqlClient", new MySql.Data.Entity.MySqlMigrationSqlGenerator());
+            //CodeGenerator = new MySql.Data.Entity.MySqlMigrationCodeGenerator();
+            //AutomaticMigrationDataLossAllowed = true;
+        }
+
+        private List<Estado> GetStates()
+        {
+
+            string fileName = MapPath("/../Seed/Estados.txt");
+
+            List<Estado> estados = new List<Estado>();
+            using (StreamReader sr = new StreamReader(fileName, Encoding.Default))
+            {
+                string[] line = sr.ReadToEnd().Replace(";", String.Empty).Replace("'", String.Empty).Replace(")", String.Empty).Replace("(", String.Empty).Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+
+                foreach (string item in line)
+                {
+                    string[] es = item.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+
+                    var estado = new Estado()
+                    {
+                        Nome = es[1].Trim(),
+                        UF = es[2].Trim(),
+                        PaisId = Int64.Parse(es[3])
+                    };
+
+                    estados.Add(estado);
+                }
+            }
+
+            return estados;
+        }
+        private List<Cidade> GetCities()
+        {
+            string fileName = MapPath("/../Seed/Cidades.txt");
+
+
+            List<Cidade> cidades = new List<Cidade>();
+            using (StreamReader sr = new StreamReader(fileName, Encoding.Default))
+            {
+                string[] line = sr.ReadToEnd().Replace(";", String.Empty).Replace("'", String.Empty).Replace(")", String.Empty).Replace("(", String.Empty).Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+
+                for (int i = 0; i < line.Length; i++)
+                {
+                    string[] es = line[i].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+
+                    var cidade = new Cidade()
+                    {
+                        Nome = es[1].Trim(),
+                        EstadoId = Int64.Parse(es[2])
+                    };
+
+                    cidades.Add(cidade);
+                }
+            }
+            return cidades;
+        }
+
+        private string MapPath(string seedFile)
+        {
+            if (HttpContext.Current != null)
+                return HostingEnvironment.MapPath(seedFile);
+
+            var absolutePath = new Uri(Assembly.GetExecutingAssembly().CodeBase).AbsolutePath;
+            var directoryName = Path.GetDirectoryName(absolutePath);
+            var path = Path.Combine(directoryName, ".." + seedFile.TrimStart('~').Replace('/', '\\'));
+
+            return path;
+        }
+
+        protected override void Seed(sgi.infra.Data.AppDataContext context)
+        {
+            context.Regras.AddOrUpdate(p => p.Id,
+                new sgi.domain.Models.Regra() { Nome = "Super" },
+                new sgi.domain.Models.Regra() { Nome = "Administrador" },
+                new sgi.domain.Models.Regra() { Nome = "Gerente" },
+                new sgi.domain.Models.Regra() { Nome = "Supervisor" },
+                new sgi.domain.Models.Regra() { Nome = "Usuário" }
+        );
+
+            context.Modulos.AddOrUpdate(p => p.Id,
+    new sgi.domain.Models.Modulo() { Nome = "Configurações", CssClass="fa-cogs" }
+    );
+
+            var enderecos = new List<Endereco>() as IList<Endereco>;
+
+            enderecos.Add(new Endereco(){
+                Bairro = "Perus", 
+                CidadeId = 5270,
+                TipoEndereco = domain.Models.Enum.TipoEndereco.Residência, 
+                Numero = 93,
+                EnderecoNome = "Rua Elisa Pedroso" });
+
+            context.Usuarios.AddOrUpdate(p => p.Id,
+                new sgi.domain.Models.Usuario()
+                {
+                    Nome = "André Evangelista",
+                    Email = "andreluisce@gmail.com",
+                    Senha = "alce6582", //17f431705018a46ef3a110ff999fdb85
+                    CriadoEm = DateTime.Now,
+                    Ativo = true,
+                    RegraId = 1,
+                    Perfil = new Perfil()
+                    {
+                        Skype = "andreluisce@outlook.com",
+                        Fone1 = "1139155164",
+                        Fone2 = "1139157797",
+                        Celular1 = "11952049500",
+                        Avatar = "http://sgiapp.com.br/assets/cliente/1/site/1/perfil0001.jpg",
+                        Enderecos = enderecos
+                    }
+                }
+
+                );
+
+            context.Paises.AddOrUpdate(p => p.Id,
+                new sgi.domain.Models.Pais() { Nome = "Brasil", Sigla = "BR" }
+            );
+
+            context.Estados.AddOrUpdate(e => e.Id, GetStates().ToArray<Estado>());
+            context.Cidades.AddOrUpdate(e => e.Id, GetCities().ToArray<Cidade>());
+
+            context.SaveChanges();
+        }
+    }
+}
